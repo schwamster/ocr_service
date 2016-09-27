@@ -1,0 +1,6 @@
+src/ocr_service/bin/*
+src/ocr_service/obj/*
+src/ocr_service.console/bin/*
+src/ocr_service.console/obj/*
+test/ocr_service.Test/bin/*
+test/ocr_service.Test/obj/*
