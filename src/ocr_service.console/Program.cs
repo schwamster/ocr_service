@@ -15,6 +15,11 @@ namespace ocr_service.console
                     if (args[i] == "-s")
                     {
                         subscriptionKey = args[i + 1];
+                        if(subscriptionKey.Length != 32)
+                        {
+                            Console.WriteLine("subscriptionKey must be 32 characters long");
+                            Environment.Exit(-1);
+                        }
                     }
 
                     if (args[i] == "-p")

@@ -4,3 +4,5 @@ src/ocr_service.console/bin/*
 src/ocr_service.console/obj/*
 test/ocr_service.Test/bin/*
 test/ocr_service.Test/obj/*
+/test/ocr_service.Tests/bin/Debug/netcoreapp1.0
+/test/ocr_service.Tests/obj/Debug/netcoreapp1.0
