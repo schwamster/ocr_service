@@ -1,0 +1,1 @@
+docker build -t ocr_service:1 .

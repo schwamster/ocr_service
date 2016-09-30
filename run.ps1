@@ -1,0 +1,1 @@
+docker run -t -p 5001:5000 ocr_service:1 host
