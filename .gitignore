@@ -6,3 +6,6 @@ test/ocr_service.Test/bin/*
 test/ocr_service.Test/obj/*
 /test/ocr_service.Tests/bin/Debug/netcoreapp1.0
 /test/ocr_service.Tests/obj/Debug/netcoreapp1.0
+/src/ocr_service.webapi/bin/Debug/netcoreapp1.0
+/src/ocr_service.webapi/wwwroot/uploads
+/src/ocr_service.webapi/obj/Debug/netcoreapp1.0

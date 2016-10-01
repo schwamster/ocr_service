@@ -9,16 +9,16 @@ namespace ocr_service.Tests
 
         public OcrServiceTest()
         {
-             _service = new OcrService();
+            var subscriptionKey = "getakeyfor_computer_vision_cognitiveservices";
+            _service = new OcrService(subscriptionKey);
         }
 
         [Fact(Skip ="usage test")]
         public void ExtractTextFromFileTest()
         {
-            var subscriptionKey = "getakeyfor_computer_vision_cognitiveservices";
             var path = @"C:\tmp\ocr-test.png";
 
-            string result = _service.ExtractTextFromFile(subscriptionKey, path).Result;
+            string result = _service.ExtractTextFromFile(path).Result;
 
         }
 

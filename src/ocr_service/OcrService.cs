@@ -4,12 +4,22 @@ using System.Net.Http;
 
 namespace ocr_service
 {
-    public class OcrService
+    public interface IOcrService
+    {
+        System.Threading.Tasks.Task<string> ExtractTextFromFile(string path);
+    }
+
+    public class OcrService : IOcrService
     {
         public const string baseAdress = "https://api.projectoxford.ai/vision/v1.0/ocr?language=en";
         public const string subscriptionHeaderName = "ocp-apim-subscription-key";
+        private string subscriptionKey; 
+        public OcrService(string subscriptionKey)
+        {
+            this.subscriptionKey = subscriptionKey;
+        }
 
-        public async System.Threading.Tasks.Task<string> ExtractTextFromFile(string subscriptionKey, string path)
+        public async System.Threading.Tasks.Task<string> ExtractTextFromFile(string path)
         {
             using (var client = new HttpClient())
             {

@@ -9,7 +9,7 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ocr_service.Tests", "test\o
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ocr_service.console", "src\ocr_service.console\ocr_service.console.xproj", "{16D92053-2935-4816-9850-8EE312BF5EA2}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ocr_service.webapi", "src\ocr_service.webapi\ocr_service.webapi.xproj", "{CA1280EB-59AF-43F4-87A7-692FDBAC29F7}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ocr_service.webapi", "src\ocr_service.webapi\ocr_service.webapi.xproj", "{647524A2-7B37-431D-8277-AA9DA45DF786}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{16D92053-2935-4816-9850-8EE312BF5EA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16D92053-2935-4816-9850-8EE312BF5EA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16D92053-2935-4816-9850-8EE312BF5EA2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CA1280EB-59AF-43F4-87A7-692FDBAC29F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CA1280EB-59AF-43F4-87A7-692FDBAC29F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CA1280EB-59AF-43F4-87A7-692FDBAC29F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CA1280EB-59AF-43F4-87A7-692FDBAC29F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{647524A2-7B37-431D-8277-AA9DA45DF786}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{647524A2-7B37-431D-8277-AA9DA45DF786}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{647524A2-7B37-431D-8277-AA9DA45DF786}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{647524A2-7B37-431D-8277-AA9DA45DF786}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -30,15 +30,15 @@ namespace ocr_service.console
             }
             else
             {
-                Console.WriteLine("usage: ocr_service -s <subscriptionkey> -p <pathToImage>");
+               Console.WriteLine("usage: ocr_service -s <subscriptionkey> -p <pathToImage>");
                 Environment.Exit(-1);
             }
 
             Console.WriteLine($"uploading Image '{path}' with you subsciption {subscriptionKey.Substring(0, 5)}...");
 
-            var service = new OcrService();
+            var service = new OcrService(subscriptionKey);
 
-            var result = service.ExtractTextFromFile(subscriptionKey, path);
+            var result = service.ExtractTextFromFile(path);
 
             Console.WriteLine(result.Result);
         }
