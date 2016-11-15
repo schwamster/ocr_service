@@ -1,6 +1,6 @@
 FROM microsoft/dotnet:latest
 
-RUN mkdir -p /app/src/ocr_service/ && mkdir -p /app/src/ocr_service.webapi/ && mkdir -p /app/src/ocr_service.console/ && mkdir -p /app/test/ocr_service.Tests/ 
+RUN mkdir -p /app/src/ocr_service/ && mkdir -p /app/src/ocr_service.webapi/ && mkdir -p /app/src/ocr_service.webapi/uploads/ && mkdir -p /app/src/ocr_service.console/ && mkdir -p /app/test/ocr_service.Tests/ 
 
 COPY ./src/ocr_service/project.json /app/src/ocr_service
 COPY ./src/ocr_service.webapi/project.json /app/src/ocr_service.webapi

@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using System.IO;
+using Swashbuckle.Swagger.Model;
+using Microsoft.Extensions.PlatformAbstractions;
 
 namespace ocr_service.webapi
 {
@@ -21,6 +24,11 @@ namespace ocr_service.webapi
                 .AddEnvironmentVariables();
 
             Configuration = builder.Build();
+
+            if (string.IsNullOrWhiteSpace(env.WebRootPath))
+            {
+                env.WebRootPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
+            }
         }
 
         public IConfigurationRoot Configuration { get; }
@@ -39,6 +47,33 @@ namespace ocr_service.webapi
             }
             services.AddSingleton<IOcrService>(new OcrService(subscriptionKey));
             services.AddSingleton<IConfiguration>(Configuration);
+
+            services.AddSwaggerGen();
+
+            services.ConfigureSwaggerGen(options =>
+            {
+                options.SingleApiVersion(new Info
+                {
+                    Version = "v1",
+                    Title = "ocr_service API",
+                    Description = "turn images/pdfs to text",
+                    TermsOfService = "None",
+                    Contact = new Contact { Name = "Bastian Töpfer", Email = "", Url = "http://github.com/schwamster" }
+                });
+
+                //Determine base path for the application.
+                var basePath = PlatformServices.Default.Application.ApplicationBasePath;
+
+                //Set the comments path for the swagger json and ui.
+                //TODO: cant find path of xml doc - image generation has to be changed anyways
+                //options.IncludeXmlComments(GetXmlCommentsPath());
+            });
+        }
+
+        private string GetXmlCommentsPath()
+        {
+            var app = PlatformServices.Default.Application;
+            return System.IO.Path.Combine(app.ApplicationBasePath, System.IO.Path.ChangeExtension(app.ApplicationName, "xml"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,6 +83,13 @@ namespace ocr_service.webapi
             loggerFactory.AddDebug();
 
             app.UseMvc();
+
+            // Enable middleware to serve generated Swagger as a JSON endpoint
+            app.UseSwagger();
+
+            // Enable middleware to serve swagger-ui assets (HTML, JS, CSS etc.)
+            app.UseSwaggerUi();
+
         }
     }
 }

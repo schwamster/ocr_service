@@ -1,8 +1,9 @@
 {
   "version": "1.0.0-*",
   "buildOptions": {
-    "debugType": "portable",
-    "emitEntryPoint": true
+    "emitEntryPoint": true,
+    "preserveCompilationContext": true,
+    "xmlDoc": true
   },
   "dependencies": {
     "Microsoft.AspNetCore.Mvc": "1.0.1",
@@ -15,7 +16,9 @@
     "ocr_service": {
       "target": "project"
     },
-    "Microsoft.AspNetCore.Hosting.Abstractions": "1.0.0"
+    "Microsoft.AspNetCore.Hosting.Abstractions": "1.0.0",
+    "Swashbuckle.SwaggerGen": "6.0.0-beta902",
+    "Swashbuckle.SwaggerUi": "6.0.0-beta902"
   },
   "frameworks": {
     "netcoreapp1.0": {
@@ -24,9 +27,19 @@
           "type": "platform",
           "version": "1.0.0"
         },
-         "Microsoft.AspNetCore.Server.Kestrel": "1.0.0"
+        "Microsoft.AspNetCore.Server.Kestrel": "1.0.0"
       },
       "imports": "dnxcore50"
     }
+  },
+  "publishOptions": {
+    "include": [
+      "appsettings.json",
+      "web.config",
+      "Dockerfile",
+      "ocr_service.xml",
+      "wwwroot"
+    ]
   }
+
 }
