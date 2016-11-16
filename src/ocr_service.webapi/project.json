@@ -3,7 +3,7 @@
   "buildOptions": {
     "emitEntryPoint": true,
     "preserveCompilationContext": true,
-    "xmlDoc": true
+    "xmlDoc": false
   },
   "dependencies": {
     "Microsoft.AspNetCore.Mvc": "1.0.1",

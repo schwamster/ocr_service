@@ -15,8 +15,11 @@ namespace ocr_service.webapi
 {
     public class Startup
     {
-        public Startup(IHostingEnvironment env)
+        private ILoggerFactory loggerFactory;
+
+        public Startup(IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            this.loggerFactory = loggerFactory;
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
@@ -36,6 +39,7 @@ namespace ocr_service.webapi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
             // Add framework services.
             services.AddMvc();
             var subscriptionKey = Configuration["ComputerVisionKey"];
@@ -43,8 +47,9 @@ namespace ocr_service.webapi
             if(subscriptionKey == "required")
             {
                 throw new Exception("Environmentvariable 'ComputerVisionKey' must be set. Get your key here: https://www.microsoft.com/cognitive-services/en-US/subscriptions");
-                //TODO: figure out how to log herer...
+                //TODO: figure out how to log here...
             }
+
             services.AddSingleton<IOcrService>(new OcrService(subscriptionKey));
             services.AddSingleton<IConfiguration>(Configuration);
 

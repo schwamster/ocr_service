@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Net.Http;
+using Microsoft.Extensions.Logging;
 
 namespace ocr_service
 {
