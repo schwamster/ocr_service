@@ -8,3 +8,4 @@ test/ocr_service.Test/obj/*
 /test/ocr_service.Tests/obj/Debug/netcoreapp1.0
 /src/ocr_service.webapi/bin/Debug/netcoreapp1.0
 /src/ocr_service.webapi/obj/Debug/netcoreapp1.0
+/.vs/ocr_service/v14/.suo
