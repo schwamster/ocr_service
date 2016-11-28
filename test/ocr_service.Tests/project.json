@@ -1,7 +1,12 @@
 {
   "version": "1.0.0-*",
   "buildOptions": {
-    "debugType": "portable"
+    "debugType": "portable",
+    "copyToOutput": {
+      "include": [
+        "testdata"
+      ]
+    }
   },
   "dependencies": {
     "System.Runtime.Serialization.Primitives": "4.1.1",
@@ -17,7 +22,7 @@
       "dependencies": {
         "Microsoft.NETCore.App": {
           "type": "platform",
-          "version": "1.0.0"
+          "version": "1.1.0"
         }
       },
       "imports": [
