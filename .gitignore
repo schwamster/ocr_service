@@ -14,3 +14,5 @@ test/ocr_service.Test/obj/*
 /src/ocr_service.webapi/obj/release/netcoreapp1.0
 /test/ocr_service.Tests/bin/Debug/netcoreapp1.1
 /test/ocr_service.Tests/obj/Debug/netcoreapp1.1
+/src/ocr_service.webapi/bin/Debug/netcoreapp1.1
+/src/ocr_service.webapi/obj/Debug/netcoreapp1.1
